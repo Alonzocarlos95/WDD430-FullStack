@@ -1,0 +1,7 @@
+.fx {
+    display: flex;
+}
+
+.fx-just-evenly {
+    justify-content: space-evenly;
+}
