@@ -1,0 +1,16 @@
+<a href="" class="list-group-item clearfix">
+  <div class="">
+    <span class="messageHeader" *ngIf="message; else noSender">{{
+      message.sender
+    }}</span>
+    <ng-template #noSender>
+      <p>No Sender Data</p>
+    </ng-template>
+    <div class="messageText" *ngIf="message; else noMsgText">
+      {{ message.msgText }}
+    </div>
+    <ng-template #noMsgText>
+      <p>No Message Data</p>
+    </ng-template>
+  </div>
+</a>

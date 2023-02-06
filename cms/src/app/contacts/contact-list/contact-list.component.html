@@ -14,14 +14,10 @@
                 </div>
             </div>
             <div class="panel-body">
-                <a href="#" class="list-group-item clearfix" *ngFor="let person of contact">
-                    <div class="pull-left">
-                        <p class="list-group-item-text">{{ person.name }}</p>
-                    </div>
-                    <div class="pull-right">
-                        <img src="{{ person.imageUrl }}" alt="" class="img-responsive" style="max-height:50px;">
-                    </div>
-                </a>
+                <cms-contact-item 
+                *ngFor="let singleContact of contact" 
+                [selectedContact]="singleContact"
+                (click)="onSelected(singleContact)"></cms-contact-item>
             </div>
         </div>
     </div>

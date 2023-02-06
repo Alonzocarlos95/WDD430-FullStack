@@ -1,0 +1,46 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form id="document-edit">
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            class="form-control"
+            size="120"
+            max="120"
+            #subject
+          />
+        </div>
+        <div class="col-sm-12 form-group">
+          <label for="message">Message</label>
+          <input
+            type="text"
+            id="message"
+            class="form-control"
+            max="255"
+            size="120"
+            #msgText
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="fx fx-just-evenly w-50">
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="onSendMessage()"
+            >
+              Send
+            </button>
+            <button class="btn btn-danger" type="button" (click)="onClear()">
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
