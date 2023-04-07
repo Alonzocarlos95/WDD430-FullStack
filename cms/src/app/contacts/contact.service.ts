@@ -7,6 +7,8 @@ import { MOCKCONTACTS } from './MOCKCONTACTS';
 })
 export class ContactService {
   contactSelectedEvent = new EventEmitter<Contact>();
+  contactChangedEvent = new EventEmitter<Contact[]>();
+
   private contacts: Contact[] = [];
   
   constructor() {
@@ -17,8 +19,21 @@ export class ContactService {
     return this.contacts.slice();
    }
 
-   getContact(id:string) {
-     const contactTarget = this.contacts.find(contact => contact.id === id);
-     return contactTarget === undefined ? null : contactTarget;
-   }
+  getContact(id: string) {
+    return this.contacts.find(contact => contact.id === id);
+  }
+
+  deleteContact(contact: Contact) {
+    if(!this.contacts) {
+      return;
+    }
+
+    const pos = this.contacts.indexOf(contact);
+    if(pos < 0) {
+      return;
+    }
+    
+    this.contacts.splice(pos, 1);
+    this.contactChangedEvent.emit(this.contacts.slice());
+  }
 }

@@ -7,7 +7,9 @@
                         <h3 class="h-mgn-custom">Contacts</h3>
                     </div>
                     <div class="col-sm-6">
-                        <button class="btn btn-success fl-right">
+                        <button 
+                            class="btn btn-success fl-right"
+                            [routerLink]="['new']">
                             New Contact
                         </button>
                     </div>
@@ -16,8 +18,7 @@
             <div class="panel-body">
                 <cms-contact-item 
                 *ngFor="let singleContact of contact" 
-                [selectedContact]="singleContact"
-                (click)="onSelected(singleContact)"></cms-contact-item>
+                [selectedContact]="singleContact"></cms-contact-item>
             </div>
         </div>
     </div>

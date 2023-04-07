@@ -4,9 +4,11 @@
       <cms-document-list></cms-document-list>
     </div>
     <div class="col-md-4">
-      <cms-document-detail 
-      *ngIf="selectedDocument; else noDocs"
-      [document]="selectedDocument"></cms-document-detail>
+      <!-- <cms-document-detail 
+        *ngIf="selectedDocument; else noDocs"
+        [document]="selectedDocument">
+      </cms-document-detail> -->
+      <router-outlet></router-outlet>
     </div>
     <ng-template #noDocs>
         <p>Select a document to see the details.</p>
